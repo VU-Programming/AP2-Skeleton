@@ -11,7 +11,7 @@
  * </dl>
  **/
 
-public interface ListInterface<E extends Data<E>> extends Clonable<ListInterface<E>> {
+public interface ListInterface<E extends Comparable> extends Cloneable {
 
     /**	@precondition -
      *  @postcondition - FALSE: list is not empty.
@@ -30,7 +30,7 @@ public interface ListInterface<E extends Data<E>> extends Clonable<ListInterface
     int size();
 
     /** @precondition  -
-     *	@postcondition - A copy of d has been added to List-PRE.
+     *	@postcondition - Element d has been added to List-PRE.
      *    				current points to the newly added element.
      *   				list-POST has been returned.
      **/
@@ -38,7 +38,7 @@ public interface ListInterface<E extends Data<E>> extends Clonable<ListInterface
 
 
     /** @precondition  - The list is not empty.
-     *	@postcondition - A copy of the value of the current element has been returned.
+     *	@postcondition -The value of the current element has been returned.
      */
     E retrieve();
 
@@ -59,15 +59,15 @@ public interface ListInterface<E extends Data<E>> extends Clonable<ListInterface
 
 
     /** @precondition  -
-     *	@postcondition - TRUE:  list contains a copy of d.
+     *	@postcondition - TRUE:  The list contains the element d.
      *	     			current-POST points to the first element in list that
-     *	     			contains a copy of d.
-     *     				FALSE: list does not contain a copy of d.
+     *	     			contains the element d.
+     *     				FALSE: list does not contain the element d.
      *	     			current-POST points to
      *	      				- if list-POST is empty
      *                    		null
      *	      				- if the first element in list > d:
-     *                    		the first elmenent in list
+     *                    		the first element in list
      *        				else
      *	    					the last element in list with value < d
      **/
@@ -101,10 +101,6 @@ public interface ListInterface<E extends Data<E>> extends Clonable<ListInterface
      */
     boolean goToPrevious();
 
-    /** @precondition  -
-     *	@postcondition - A deep-copy of list has been returned.
-     **/
-    public ListInterface<E> clone();
 
 
 }

@@ -1,6 +1,5 @@
 public class Main {
 
-
     private void start() {
         // Create a scanner on System.in
         

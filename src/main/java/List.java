@@ -1,6 +1,6 @@
-public class List<E extends Data<E>> implements ListInterface<E>{
+public class List<E extends Comparable> implements ListInterface<E>{
 
-    class Node {
+    private class Node {
 
         E data;
         Node prior,

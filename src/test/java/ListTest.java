@@ -131,9 +131,7 @@ public class ListTest {
         Letter z = new Letter('z');
         list.insert(z);
 
-        // Retrieve should return a copy.
         Letter letter = list.retrieve();
-        assertFalse("Retrieve should return another object", z == letter);
         assertEquals("Retrieve should return an equal object", z, letter);
 
         // TODO: You can add more of your own tests.
@@ -297,7 +295,7 @@ public class ListTest {
      * If you write your own tests you may also use your own
      * Implementations (i.e., of Identifier).
      */
-    private class Letter implements Data<Letter> {
+    private class Letter implements Comparable<Letter>, Cloneable {
 
         private char letter;
 
