@@ -96,7 +96,7 @@ public interface ListInterface<E extends Data<E>> extends Clonable<ListInterface
 
 
     /** @precondition  -
-     *	@postcondition - FALSE: list is empty of current wijst het eerste object aan
+     *	@postcondition - FALSE: list is empty of current points to the first element
      *     				TRUE:  current-POST points to the prior element of current-PRE
      */
     boolean goToPrevious();
