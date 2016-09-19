@@ -1,4 +1,4 @@
-#Calculator assignment for Advanced Programming.
+# Calculator assignment for Advanced Programming.
 
 ## How to build
 Run `./gradlew jar`.
