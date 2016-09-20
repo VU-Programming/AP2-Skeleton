@@ -1,11 +1,8 @@
-# Calculator assignment for Advanced Programming.
+# Template for assignment 2 for Advanced Programming.
 
 ## How to build
 Run `./gradlew jar`.
 Then run `java -jar build/libs/AP2-1.0.jar`
-
-## Test with random input
-`python util/generate_expressions.py | java -jar build/libs/AP2-1.0.jar`
 
 ## How to hand in
 Execute `./gradlew archive`.
@@ -31,5 +28,7 @@ generate an IntelliJ project for you.
 [How to import in IntelliJ](https://www.jetbrains.com/help/idea/2016.2/importing-project-from-gradle-model.html).
 
 ### Import in Eclipse
-Run `./gradlew eclipse` in the project directory, and then [follow this](http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Ftasks%2Ftasks-importproject.htm).
+
+* Option 1: [Use the buildship plugin](http://www.vogella.com/tutorials/EclipseGradle/article.html).
+* Option 2: Run `./gradlew eclipse` in the project directory, and then [follow this](http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Ftasks%2Ftasks-importproject.htm).
 
