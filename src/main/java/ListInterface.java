@@ -1,5 +1,5 @@
 /**	@elements : objects of type E
- *	@structure : lineair
+ *	@structure : linear
  *	@domain : 	The elements in the list are sorted monotonically increasing.
  *				All rows of elements of type E are valid values for a list.
  *       		For every non-empty list the reference current is pointing to an
