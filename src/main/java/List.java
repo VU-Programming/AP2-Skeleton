@@ -74,7 +74,7 @@ public class List<E extends Comparable> implements ListInterface<E>{
     }
 
     @Override
-    public ListInterface<E> clone() {
+    public ListInterface<E> copy() {
         return null;
     }
 }

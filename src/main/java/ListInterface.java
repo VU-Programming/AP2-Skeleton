@@ -11,7 +11,7 @@
  * </dl>
  **/
 
-public interface ListInterface<E extends Comparable> extends Cloneable {
+public interface ListInterface<E extends Comparable> {
 
     /**	@precondition -
      *  @postcondition - FALSE: list is not empty.
@@ -100,6 +100,12 @@ public interface ListInterface<E extends Comparable> extends Cloneable {
      *     				TRUE:  current-POST points to the prior element of current-PRE
      */
     boolean goToPrevious();
+
+    /**
+     * @precondition -
+     * @postcondition A deep copy of the list has been returned.
+     */
+    ListInterface<E> copy();
 
 
 
