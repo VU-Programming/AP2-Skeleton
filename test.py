@@ -60,6 +60,8 @@ def main():
             output, stderr = get_output(args.jar, input)
             if len(stderr) > 0:
                 raise TestFailure("Program outputted errors:\n%s" % stderr)
+            if output is None:
+                raise TestFailure("Program did not return any output")
             compare(output, expected)
             log("Passed test %s!" % test, "SUCCESS")
         log("All tests passed!", "SUCCESS")
