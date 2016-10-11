@@ -1,0 +1,54 @@
+/ This is the test input for problem 2 of the practical advanced programming.
+/ Don't submit a solution, unless is passes the following tests.
+/
+/ Is an error given for the empty line?
+
+/ Some simple test for the operators.
+Ape = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+? Ape
+Nut = {1, 3, 5, 7, 9, 1234567890, 13, 15, 17, 98765432100 }
+/ Are spaces ignored?
+?          Nut
+? Ape + Nut
+? Ape * Nut
+? Ape - Nut
+? Ape | Nut
+/ check priorities
+? {1, 2, 3} + {4, 5, 6}*{3, 4  }
+? {1, 2, 3} + {4, 5} | {2, 3, 4}
+/ The following statement should give an error
+Ape = (({1, 2, 3})
+/ What is the value of Ape after the wrong statement? Still {1..9} ?
+?Ape
+/ Now a real tricky test: will the '/' be parsed correctly?
+Mies = {12, 345, 65, 67, 5, 435, 879, 90, 867} / no slash allowed here
++ {1, 45, 12, 342, 546}
+/ The two line above should not be processed as
+/ "Mies = {12, 345, 65, 67, 5, 435, 879, 90, 867} + {1, 45, 12, 342, 546}"
+/ So the variable Mies should be unknown.
+? Mies
+/ The following line contains two assignments and thus is according to the
+/ the syntax not correct.
+Ape = {1, 10, 100, 1000}          Wim = {3, 4}
+/ Is Ape still {1..9} ?
+? Ape
+Nut = Ape
+Ape = {1, 2, 5}
+/ not that Ape is changed, Nut should not be changed.
+/ is Nut still {1..9} ?
+? Nut
+? {}
+Wim = Ape        + Ape + {     }*Nut*(Ape + Nut)
+/ Wim is now equal to Ape
+?Wim
+/ Second time same result?
+?Wim
+Wim = Wim
+/ Is Wim unchanged?
+?                          Wim
+X = ((({1, 2, 3} + {4, 5, 6} * {4, 5})) * ({2, 3}))
+     /X bevat nu {2, 3}
+? X
+/ Do the operators work with empty sets?
+? { } * {}
+? {}  | {}

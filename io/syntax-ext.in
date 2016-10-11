@@ -1,0 +1,119 @@
+/*************************************************************************
+/
+/ The following is an extension of the test input given to the students.
+/ With thanks to: Freek, Sjoerd, Wiebren, Maarten, Klaas, Loek, Frank,
+/ Jasper Flick en Brinio Hond
+/
+/*************************************************************************
+/ initialize Ape
+Ape = {1, 2, 3}
+/ start testcase Brinio
+?({}({1}))
+/ end testcase Brinio
+/ Does the program see that two different that start with the same letter are
+// different?
+AB = {1,2}
+AC = {3,4}
+? AB
+/Some more tests to check if empty sets are dealt with correctly.
+? {} + {}
+? {} - {}
+? {1} | {}
+/ in term(): are characters read correctly? are spaces skipped correctly?
+? {} * {} * {}  *   {}
+? {} * {}* {}
+? {1} * {}
+/ in expression(): are characters read correctly? are spaces skipped correctly?
+? {} + {} + {}  +   {}
+? {} + {}+ {}
+? { 1  ,   12 }
+/ What happens if the variable is in the expression?
+Ape = (Ape+{17}) - Ape*{  2, 3, 4, 5}
+?Ape
+/ What happens when elements are more than once on the input
+Ape ={ 1, 2, 3, 4, 2, 3, 4, 5, 3, 4, 6 }
+/ the number 2 should be in the set only once.
+? Ape
+Lang5 = {}
+/ start testcase Erald Kulk
+/ Some programs don't accept the number 0
+?{0}
+/ end testcase Erald Kulk
+/ start testcase Jasper Flick
+? ( {1} {2} )
+/ end testcase Jasper Flick
+/ start testcase Tim Verweij
+/ What happens when there are spaces in an identifer?
+?A p e
+/*************************************************************************
+/ All the following tests should result in an error.
+/*************************************************************************
+/ start testcase Willem van Willigen
+/ can numbers really become arbitrarily long ?
+?{99999999999999999999999999999999999999999999999999999999999999999999999999}
+/ end testcase Willem van Willigen
+/ Some parsers end an expression when a ')' or <eoln> is seen.
+/ The following input therefor sometimes doesn't generate an error.
+AB = AC )
+/Test of term(): correct factor followed by a wrong factor
+?{1}*({1, 2, 3}
+/Test of expressie(): correct term followed by a wrong term
+?{1}+({1, 2, 3}
+/ The program should be case-sensitive. So using lang5 should generate an error.
+?lang5
+/ Does the identifer start with a letter?
+1Ape = {}
+/ The following line is not correct.
+q =
+/ a statement should be on 1 line
+?{ 19, 20,
+21}
+/ start testcase Pieter Hijma
+?{1})
+PieterHijma={1})
+?PieterHijma
+/ end testcase Pieter Hijma
+/ What happens when an operator is not existing
+?{1,2} ikbengeenoperator {3,4}
+/ ***********
+/	test on syntax number
+/ ***********
+/ '+' sign not allowed
+? { +1 }
+/ After  a '0' should come a ',' or an '}'
+? { 00 }
+? { 05 }
+/ Some tests about parsing ','
+? {  , 1 ,2}
+?  { 12 ,- ,2 }
+? {1 , 2 , }
+? {1 , 2 ,}
+?{ 1 , , 2}
+? { 1 , 2,
+21 }
+? { -, 1}
+/ Spaces in numbers are not allowed. Spaces should be ignored in other places.
+? { 12 , 11 3 }
+? { 1  ,  2  ,  -1 , 23}
+? { 1  ,  2  ,  -  1 , 23}
+/ Only digits, comma and spaces are allowed.
+? { 1, 2, 3a }
+? { 1, 2, 3 }a
+? { 1, 2, 3 } a
+/ Does the program detect that '=' is missing?
+a {1}
+? {54321}
+/ Will the program detect that the '=' has become a '>'?
+a > {1}
+?{98765}
+a>{1}
+Ape={}
+Nut={}
+Mies={}
+Wim={}
+X={}
+/ This was not the last line
+/ Three empty lines are following ==> three errors
+
+
+
