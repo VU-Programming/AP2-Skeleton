@@ -11,4 +11,6 @@ Describe your issue here
 
 ### Output
 
-If applicable, copy the output of the program here.
+```
+If applicable, copy the output of the program here, between the triple quotes.
+```
