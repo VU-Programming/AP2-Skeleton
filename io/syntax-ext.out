@@ -24,8 +24,8 @@ error incomplete statement
 error number expected
 error no statement
 error no end of line
-error identifier too long
-error identifier too long
+error unexpected character ')'
+error undefined variable
 error no end of line
 error missing closing curly brace
 error missing closing curly brace
