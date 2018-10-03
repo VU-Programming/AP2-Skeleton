@@ -1,10 +1,9 @@
-public class List<E extends Comparable> implements ListInterface<E>{
+public class List<E extends Comparable<E>> implements ListInterface<E> {
 
     private class Node {
 
         E data;
-        Node prior,
-                next;
+        Node prior, next;
 
         public Node(E d) {
             this(d, null, null);
